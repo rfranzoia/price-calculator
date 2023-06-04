@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProductCalculationApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("server.servlet.context-path", "/product-calculator");
 		SpringApplication.run(ProductCalculationApplication.class, args);
 	}
 

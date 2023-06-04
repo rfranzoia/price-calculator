@@ -1,7 +1,9 @@
 package com.franzoia.productcalculation.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductsDTO {
 
     private Long uuid;
