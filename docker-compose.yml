@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  acme-test:
+    image: product-calculator
+    networks:
+      - product-calculator-network-2
+      
+networks:
+  product-calculator-network-2:
+    driver: bridge

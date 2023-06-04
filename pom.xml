@@ -10,11 +10,12 @@
 	</parent>
 	<groupId>com.franzoia</groupId>
 	<artifactId>product-calculation</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>product-calculation</name>
 	<description>REST API for Product Price and Amount calculations</description>
 	<properties>
 		<java.version>17</java.version>
+		<dockerfile-maven-version>1.4.8</dockerfile-maven-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,8 +43,9 @@
 	</dependencies>
 
 	<build>
+		<finalName>product-calculator</finalName>
 		<plugins>
-			<plugin>
+ 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
