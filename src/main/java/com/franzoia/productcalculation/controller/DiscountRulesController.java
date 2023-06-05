@@ -57,7 +57,7 @@ public class DiscountRulesController {
     }
 
     @GetMapping(value = "/product/{uuid}")
-    public List<DiscountRulesDTO> listByProductUuid(@PathVariable("uuid") final Long uuid) throws EntityNotFoundException{
+    public List<DiscountRulesDTO> listByProductUuid(@PathVariable("uuid") final String uuid) throws EntityNotFoundException{
         return discountRulesService.findByProduct(uuid);
     }
 }

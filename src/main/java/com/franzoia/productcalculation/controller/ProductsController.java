@@ -29,7 +29,7 @@ public class ProductsController {
     }
 
     @GetMapping(value = "/{uuid}")
-    public ProductsDTO getProduct(@PathVariable("uuid") final Long uuid) throws EntityNotFoundException {
+    public ProductsDTO getProduct(@PathVariable("uuid") final String uuid) throws EntityNotFoundException {
         return ProductsMapper.makeDTO(productsService.find(uuid));
     }
 
@@ -41,12 +41,12 @@ public class ProductsController {
 
     @DeleteMapping("/{uuid}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProduct(@PathVariable("uuid") final Long uuid) throws EntityNotFoundException {
+    public void deleteProduct(@PathVariable("uuid") final String uuid) throws EntityNotFoundException {
         productsService.delete(uuid);
     }
 
     @PutMapping("/{uuid}")
-    public void update(@PathVariable final Long uuid, @RequestBody final ProductsDTO productsDTO)
+    public void update(@PathVariable final String uuid, @RequestBody final ProductsDTO productsDTO)
             throws EntityNotFoundException {
         productsService.update(uuid, productsDTO);
     }

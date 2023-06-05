@@ -6,14 +6,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductsDTO {
 
-    private Long uuid;
+    private String uuid;
 
     private String name;
 
     private Double price;
 
     @JsonProperty
-    public Long getUuid() {
+    public String getUuid() {
         return uuid;
     }
 
@@ -27,7 +27,7 @@ public class ProductsDTO {
         return price;
     }
 
-    private ProductsDTO(Long uuid, String name, Double price) {
+    private ProductsDTO(String uuid, String name, Double price) {
         this.uuid = uuid;
         this.name = name;
         this.price = price;
@@ -38,13 +38,13 @@ public class ProductsDTO {
     }
 
     public static class ProductDTOBuilder {
-        private Long uuid;
+        private String uuid;
 
         private String name;
 
         private Double price;
 
-        public ProductDTOBuilder setUuid(Long uuid) {
+        public ProductDTOBuilder setUuid(String uuid) {
             this.uuid = uuid;
             return this;
         }

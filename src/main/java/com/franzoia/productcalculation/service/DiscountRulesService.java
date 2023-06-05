@@ -42,7 +42,7 @@ public class DiscountRulesService extends DefaultService<DiscountRules, Long> {
         discountRules.setValidUntil(dto.getValidUntil());
     }
 
-    public List<DiscountRulesDTO> findByProduct(final Long productUuid) throws EntityNotFoundException {
+    public List<DiscountRulesDTO> findByProduct(final String productUuid) throws EntityNotFoundException {
         Products products = productsService.find(productUuid);
         return DiscountRulesMapper.makeListDTO(((DiscountRulesRepository) repository).findByProduct(products));
     }

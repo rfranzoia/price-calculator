@@ -13,7 +13,7 @@ public class Products implements DefaultEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long uuid;
+	private String uuid;
 
 	@Column(nullable = false)
 	private String name;
@@ -25,20 +25,17 @@ public class Products implements DefaultEntity {
 	}
 
 
-	public Products(Long uuid, String name, Double price) {
+	public Products(String uuid, String name, Double price) {
 		this.uuid= uuid;
 		this.name = name;
 		this.price = price;
 	}
 
-	public Products(Long uuid) {
-		this.uuid = uuid;
-	}
-	public Long getUuid() {
+	public String getUuid() {
 		return uuid;
 	}
 
-	public void setUuid(Long uuid) {
+	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
 

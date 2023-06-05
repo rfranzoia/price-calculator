@@ -14,7 +14,7 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 @Service
-public class ProductsService extends DefaultService<Products, Long> {
+public class ProductsService extends DefaultService<Products, String> {
 
     public ProductsService(final ProductRepository productRepository) {
         super(productRepository);
@@ -36,7 +36,7 @@ public class ProductsService extends DefaultService<Products, Long> {
 	 * @throws EntityNotFoundException
 	 */
     @Transactional
-    public void update(final Long uuid, final ProductsDTO dto) throws EntityNotFoundException {
+    public void update(final String uuid, final ProductsDTO dto) throws EntityNotFoundException {
         Products products = findByIdChecked(uuid);
         products.setName(dto.getName());
         products.setPrice(dto.getPrice());
